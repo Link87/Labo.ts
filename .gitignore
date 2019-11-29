@@ -1,6 +1,9 @@
 # compiler output
 dist
 
+# telegram bot token
+token.key
+
 # Logs
 logs
 *.log
