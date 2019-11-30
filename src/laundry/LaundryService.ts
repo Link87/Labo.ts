@@ -1,7 +1,7 @@
 import { Washer, Running, Idle } from '../models/Washer';
 import { Program } from '../models/Program';
 import { User } from '../models/User';
-import { Timer } from '../helpers/Timer';
+import { Timer } from './Timer';
 
 export class LaundryService {
     private readonly washer: Washer;
