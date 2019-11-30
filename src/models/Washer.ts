@@ -2,20 +2,13 @@ import { Program } from './Program';
 import { User } from './User';
 
 export class Washer {
-    public state: Idle | RunningState = {};
+    public state: WasherState = new Idle;
 }
 
-export class RunningState {
-
-    private endTime: number;
-
-    constructor(public user: User, public program: Program) {
-        this.endTime = new Date().getTime() + program.duration;
-    }
-
-    get durationMs(): number {
-        return this.endTime - new Date().getTime();
-    }
+export class Running {
+    constructor(public user: User, public program: Program) {}
 }
 
-export type Idle = {};
+export class Idle {};
+
+export type WasherState = Idle | Running;
