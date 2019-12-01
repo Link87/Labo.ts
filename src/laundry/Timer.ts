@@ -13,7 +13,7 @@ export class Timer {
             let timeout: NodeJS.Timeout = setTimeout(() => resolve(), this.duration);
             this.finishTime = new Date().getTime() + this.duration;
             this.cancelHandle = (err: any) => {
-                reject(err || new Error('Timeout'));
+                reject(err);
                 clearTimeout(timeout);
             }
         });
